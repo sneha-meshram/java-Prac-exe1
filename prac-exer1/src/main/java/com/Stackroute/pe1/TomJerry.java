@@ -1,3 +1,5 @@
+package com.Stackroute.pe1;
+
 import java.util.Scanner;
 
 public class TomJerry {

@@ -1,55 +1,42 @@
+package com.Stackroute.pe1;
+
 import java.util.Scanner;
+
 
 public class Palindrome {
 
-
-        public static void main (String[] args){
-
-            int sum=0;
-            int num;
-            int temp;
-            int rem;
-            int a;
-            int sum1=0;
-
-
-            System.out.println("enter a number");
-            Scanner input = new Scanner(System.in);
-            num = input.nextInt();
-
-            temp=num;
-            while(temp>0) {
-                rem = temp % 10;
-                sum = (sum * 10) + rem;
-                temp = temp / 10;
-            }
-            if(sum==num)
-            {
-                while(temp>0)
-                {
-                    a=num%10;
-                    if(a%2==0)
-                    {
-                        sum1=sum1+a;
-                    }
-                    temp=temp/10;
-
-                }
-
-                if(sum1<25){
-                    System.out.println("is palindrome and sum of even no. is less than 25");
-                }
-                else{
-                    System.out.println("is palindrome and sum of even no. is greater than 25");
-                }
-
-
-
-            }
-            else
-            {
-                System.out.println("the number is not a palindrome");
+    public String palindromeSum(long inputNum) {
+        String returnResult = "Not a palindrome";
+        if (isPalindrome(inputNum)) {
+            if ((isSumOfEvenNum(inputNum) > 25)) {
+                returnResult = "Palindrome and greater than 25";
+            } else {
+                returnResult = "Palindrome and lesser than 25";
             }
         }
-
+        return returnResult;
     }
+
+    private boolean isPalindrome(long number) {
+        String str = "";
+        String stringNum = String.valueOf(number);
+        boolean boo = false;
+        for (int i = stringNum.length() - 1; i >= 0; i--) {
+            str = str.concat(String.valueOf(stringNum.charAt(i)));
+        }
+        if (str.equals(stringNum)) boo = true;
+        return boo;
+    }
+
+    private int isSumOfEvenNum(long number) {
+        int sumOfEvenNum = 0;
+        long localNumber = number;
+        while (localNumber > 0) {
+            if ((localNumber % 10) % 2 == 0) {
+                sumOfEvenNum += localNumber % 10;
+            }
+            localNumber = localNumber / 10;
+        }
+        return sumOfEvenNum;
+    }
+}
