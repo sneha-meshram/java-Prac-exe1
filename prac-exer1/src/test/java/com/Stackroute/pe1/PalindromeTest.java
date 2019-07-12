@@ -16,7 +16,8 @@ public class PalindromeTest {
     }
 
     @Before
-    public void setup(){
+    public void setup()
+    {
         this.palindrome=new Palindrome();
     }
     @After
