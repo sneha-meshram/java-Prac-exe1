@@ -20,7 +20,6 @@ public class SumOfnumbers {
                 break;
             }
         }
-        /*Close the scanner*/
-        s.close();
+
     }
 }

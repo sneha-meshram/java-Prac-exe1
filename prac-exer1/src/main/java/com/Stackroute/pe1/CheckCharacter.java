@@ -1,7 +1,15 @@
 package com.Stackroute.pe1;
 
 import java.util.Scanner;
-public class CheckChar {
+
+/**
+ * Practice Exercise Question - 6
+ * Class that takes a character from the user as input and determines whether the
+ * character entered is a capital letter, a small case letter, a digit or a special symbol and display
+ * appropriately.
+ */
+
+public class CheckCharacter {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
@@ -19,7 +27,6 @@ public class CheckChar {
         } else {
             System.out.println("Please give a valid string");
         }
-        /*Close the scanner*/
-        s.close();
+
     }
 }

@@ -10,11 +10,6 @@ public class ReverseString {
         String revstr = "";
         int len;
 
-        //
-        // System.out.println("enter a word");
-        // Scanner input = new Scanner(System.in);
-        // str = input.nextLine();
-        //
         len = str.length();
 
         for(int i=len - 1; i >= 0;i--)
